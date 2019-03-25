@@ -19,11 +19,11 @@
           <router-link class="navbar-item" tag="a" to="/about" active-class="is-active" exact>About</router-link>
 
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">Pair</a>
+            <router-link class="navbar-link" to="/pair/" active-class="is-active">Pair</router-link>
 
             <div class="navbar-dropdown">
-              <a class="navbar-item">Start with Wine</a>
-              <a class="navbar-item">Start with Food</a>
+              <router-link tag="a" to="/pair/wine" active-class="is-active" class="navbar-item">Start with Wine</router-link>
+              <router-link tag="a" to="/pair/food" active-class="is-active" class="navbar-item">Start with Food</router-link>
             </div>
           </div>
         </div>

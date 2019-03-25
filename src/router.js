@@ -17,6 +17,18 @@ export default new Router({
       path: '/about',
       name: 'about',
       component: () => import('./views/About.vue')
+    },
+    {
+      path: '/pair',
+      beforeEnter (to, from, next) {
+        next('/')
+      }
+    },
+    {
+      path: '/pair/:mode',
+      name: 'pair',
+      props: true,
+      component: () => import('./views/Pair.vue')
     }
   ]
 })
