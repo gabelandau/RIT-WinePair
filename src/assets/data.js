@@ -156,7 +156,7 @@ let food = {
               title: 'How are you preparing the white meat?',
               items: [
                 {
-                  item: 'BBQ',
+                  item: 'Barbecue',
                   level: 4,
                   result: {
                     grape: 'Zinfandel',
@@ -201,7 +201,7 @@ let food = {
                   item: 'Smoked',
                   level: 4,
                   result: {
-                    grape: 'Rose',
+                    grape: 'Rosé',
                     reason: 'A sparkling or bold rosé will add acidity and a burst of flavor to the bold salty-fish notes of the smoked salmon.' 
                   }
                 },
@@ -234,7 +234,7 @@ let food = {
                   item: 'Seared',
                   level: 4,
                   result: {
-                    grape: 'Rose',
+                    grape: 'Rosé',
                     reason: 'The taste of a strong and dry Rosé adapts well to the meaty fish flavor of tuna.' 
                   }
                 },
@@ -344,7 +344,7 @@ let food = {
             item: 'Margherita Pizza',
             level: 3,
             result: {
-              grape: 'Rose',
+              grape: 'Rosé',
               reason: 'The aromatic notes of fresh basil and the use of other lightly flavored fresh ingredients in margherita pizzas pairs well with a dry Rosé.'
             }
           }
@@ -541,7 +541,7 @@ let wine = {
                   item: 'Zinfandel',
                   level: 4,
                   result: {
-                    grape: 'BBQ',
+                    grape: 'Barbecue',
                     reason: 'The rich redness of Zinfandel helps compliment the smokey flavors of BBQ.' 
                   }
                 },
@@ -608,7 +608,7 @@ let wine = {
                   item: 'Sparkling Shiraz',
                   level: 4,
                   result: {
-                    grape: 'BBQ',
+                    grape: 'Barbecue',
                     reason: 'The rich redness and bubbles of Sparkling Shiraz helps compliment the smokey and tangy flavors of BBQ.'
                   }
                 }
