@@ -1,10 +1,18 @@
 <template>
   <div class="home content-wrapper">
-    <div v-if="valid" ref="container">
+    <div v-if="valid">
       <h2 class="title is-2 animated fadeInLeft fast">{{ title }}</h2>
       <p class="subtitle animated fadeInLeft fast">{{ subtitle }}</p>
 
-      <Dropdown :data="startingPoint" v-on:selected="update" id="1"></Dropdown>
+      <div ref="container">
+        <Dropdown :data="startingPoint" v-on:selected="update" id="1"></Dropdown>
+      </div>
+
+      <div class="box result-box" v-if="result">
+        <p class="box-heading">Your wine selection is...</p>
+        <p class="box-main">{{ selection.grape }}</p>
+        <p class="box-detail">{{ selection.reason }}</p>
+      </div>
     </div>
     <div v-if="!valid">
       <h2 class="title is-2 animated fadeInLeft fast">Invalid Mode!</h2>
@@ -28,11 +36,17 @@ export default {
       data: data,
       startingPoint: null,
       valid: true,
-      title: ''
+      result: false,
+      title: '',
+      selection: {
+        grape: '',
+        reason: ''
+      }
     }
   },
   methods: {
     update (item) {
+      this.result = false
       this.currentId++
 
       if (item.level && this.currentId != item.level) {
@@ -59,6 +73,11 @@ export default {
         instance.$on('selected', this.update)
         this.$refs.container.appendChild(instance.$el)
       }
+
+      if (item.result) {
+        this.result = true
+        this.selection = item.result
+      }
     }
   },
   beforeMount () {
@@ -76,3 +95,24 @@ export default {
   }
 }
 </script>
+
+<style>
+.result-box {
+  margin-top: 20px;
+  background-color: #FA7C91;
+  color: #fff;
+}
+
+.box-detail {
+  font-size: 1.1em;
+}
+
+.box-main {
+  font-size: 2.3em;
+  margin-bottom: 20px;
+}
+
+.box-heading {
+  font-size: 1.3em;
+}
+</style>
